@@ -16,7 +16,7 @@ public abstract class Jet {
 
 	public void listSpecs() {
 		System.out.println("Here is your " + this.model + " at the price of " + this.price + " dollars.");
-		System.out.println("Its range is " + this.range + " and your top speed is " + this.speed + " MPH or "
+		System.out.println("Its range is " + this.range + " miles and your top speed is " + this.speed + " MPH or "
 				+ getMach() + " mach.");
 		System.out.println();
 	}

@@ -8,10 +8,6 @@ public class FighterJet extends Jet implements CombatReady {
 
 	@Override
 	public void fight() {
-		System.out.println('\u266A' + " And the rockets' red glare " + '\u266A');
-		System.out.println('\u266A' + " The bombs bursting in air " + '\u266A');
-		System.out.println('\u266A' + " Gave proof through the night " + '\u266A');
-		System.out.println('\u266A' + " That our flag was still there " + '\u266A');
 	}
 
 }
