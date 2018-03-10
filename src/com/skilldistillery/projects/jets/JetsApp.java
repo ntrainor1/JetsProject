@@ -8,48 +8,63 @@ public class JetsApp {
 		JetsApp ja = new JetsApp();
 		ja.runApp();
 	}
-	
+
 	private void runApp() {
 		Scanner kb = new Scanner(System.in);
-		
+
 		System.out.println("*****************************");
 		System.out.println("*      WELCOME TO JETS      *");
 		System.out.println("*****************************");
-		System.out.println();
-		
+
 		AirField newField = new AirField();
-		
+
 		while (true) {
 			menu();
 			char userInput = (kb.nextLine()).charAt(0);
+
 			if (userInput == '1') {
+				System.out.println();
+				newField.listFleet();
+				continue;
 			}
 			if (userInput == '2') {
+				System.out.println();
+				System.out.println("Now, you can");
+				System.out.println("   FLY");
+				System.out.println("         LIKE");
+				System.out.println("                AN");
+				System.out.println("                     EAGLE");
+				continue;
 			}
 			if (userInput == '3') {
+				continue;
 			}
 			if (userInput == '4') {
+				continue;
 			}
 			if (userInput == '5') {
+				continue;
 			}
 			if (userInput == '6') {
+				continue;
 			}
 			if (userInput == '7') {
+				continue;
 			}
 			if (userInput == '8') {
 				System.out.println("GOODBYE!");
 				break;
 			}
 			else {
-				System.out.println("Put in a correct option.");
-				System.out.println();
+				System.out.println("Input a correct option.");
 			}
 		}
 		
 		kb.close();
 	}
-	
+
 	private void menu() {
+		System.out.println();
 		System.out.println("*****************************");
 		System.out.println("*                           *");
 		System.out.println("*        PRESS A KEY        *");
