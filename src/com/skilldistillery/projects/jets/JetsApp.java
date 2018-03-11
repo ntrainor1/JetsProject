@@ -129,7 +129,6 @@ public class JetsApp {
 		System.out.println("What is the price of your jet?");
 		Long newPrice = kb.nextLong();
 
-		// if (newRange.)
 		newField.addJet(newModel, newSpeed, newRange, newPrice, newType);
 	}
 
