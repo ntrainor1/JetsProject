@@ -1,5 +1,7 @@
 package com.skilldistillery.projects.jets;
 
+import java.text.DecimalFormat;
+
 public abstract class Jet {
 	private String model;
 	private double speed;
@@ -22,8 +24,10 @@ public abstract class Jet {
 	}
 
 	public void fly() {
+		DecimalFormat df = new DecimalFormat("#.#####");
+		
 		System.out.println("Flying high in your " + this.model + ", you are able to fly for "
-				+ (this.range / this.speed) + "hours and " + this.range + " miles.");
+				+ df.format(this.range / this.speed) + " hours and " + this.range + " miles.");
 		System.out.println();
 	}
 

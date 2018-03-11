@@ -12,14 +12,19 @@ public class AirField {
 	}
 
 	public void listFleet() {
+		int totalJets = 0;
+		
 		for (int i = 0; i < jetFleet.length; i++) {
 			if (jetFleet[i] == null) {
 				break;
 			}
 			else {
 				jetFleet[i].listSpecs();
+				totalJets++;
 			}
 		}
+		
+		System.out.println("You have a total of " + totalJets + " jets in your fleet.");
 	}
 
 	public void flyFleet() {
@@ -29,6 +34,31 @@ public class AirField {
 			}
 			else {
 				jetFleet[i].fly();
+			}
+		}
+	}
+	
+	public void addJet(String newModel, double newSpeed, int newRange, long newPrice, char newType) {
+		for (int i = 0; i < jetFleet.length; i++) {
+			if (jetFleet[i] != null) {
+				continue;
+			}
+			else {
+				if (newType == 'F' || newType == 'f') {
+					FighterJet newFighter = new FighterJet(newModel, newSpeed, newRange, newPrice);
+					jetFleet[i] = newFighter;
+					break;
+				}
+				else if (newType == 'C' || newType == 'c') {
+					CargoJet newCargo = new CargoJet(newModel, newSpeed, newRange, newPrice);
+					jetFleet[i] = newCargo;
+					break;
+				}
+				else {
+					JetImpl regularJet = new JetImpl(newModel, newSpeed, newRange, newPrice);
+					jetFleet[i] = regularJet;
+					break;
+				}
 			}
 		}
 	}
@@ -65,7 +95,7 @@ public class AirField {
 				break;
 			}
 			else {
-				if (jetFleet[i].getSpeed() > longestRange) {
+				if (jetFleet[i].getRange() > longestRange) {
 					longestJet = jetFleet[i];
 					longestRange = jetFleet[i].getRange();
 				}
